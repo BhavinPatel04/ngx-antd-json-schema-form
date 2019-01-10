@@ -1,12 +1,27 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { AppModule } from "./app/app.module";
+import { Config } from "./config/config";
 
-if (environment.production) {
+import { AppInitService } from "./common/services/app.init.service";
+
+if (Config.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then((module) => {
+    const injector = module.injector;
+    const appInit = injector.get(AppInitService);
+
+    // can add any step(promise) here for application initialization
+    // appInit.addStep(promise)
+
+    appInit.init();
+    appInit.done();
+
+    return injector;
+  })
+  .catch((err) => console.error(err));
