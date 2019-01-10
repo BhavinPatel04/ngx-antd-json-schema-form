@@ -1,8 +1,10 @@
 # Angular Boilerplate Application
 
 ## Features
-````
+
+```
 Angular 7
+gulp
 prettier
 tslint
 pre-commit with lint-staged husky
@@ -10,11 +12,11 @@ ngx-restangular
 Development ready - start adding components directly
 Hook to initialize extra things on-load
 Base Component to add common things to all components on extend
-````
+```
 
 ## Start
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run setup` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 

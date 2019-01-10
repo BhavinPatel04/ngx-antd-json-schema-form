@@ -14,7 +14,7 @@ const _ = require("lodash");
   providers: [Title, SharedService]
 })
 export class AppComponent implements OnInit {
-  title = "harvest-ui";
+  title = "ngx-barebone-app";
 
   public constructor(
     titleService: Title,
@@ -34,7 +34,9 @@ export class AppComponent implements OnInit {
           return this.activatedRoute;
         }),
         map((route: any) => {
-          while (route.firstChild) { route = route.firstChild; }
+          while (route.firstChild) {
+            route = route.firstChild;
+          }
           return route;
         }),
         filter((route) => route.outlet === "primary"),

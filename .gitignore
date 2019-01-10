@@ -42,4 +42,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Coverage
+/coverage
+
 src/config/config.ts
