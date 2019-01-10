@@ -31,7 +31,7 @@
     "build-dev": "ng build --dev --output-hashing=all && gulp build",
     "build-prod": "node --max-old-space-size=4076 ./node_modules/.bin/ng build --prod && gulp build",
     "test": "ng test",
-    "lint": "tslint --fix",
+    "lint": "tslint -p tsconfig.json --fix",
     "e2e": "ng e2e",
     "format": "prettier \"**/*.{ts,js,html,css,scss,json,md}\" --write",
     "check-format": "prettier \"**/*.{ts,js,html,css,scss,json,md}\" --write -l",

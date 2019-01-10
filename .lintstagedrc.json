@@ -1,6 +1,6 @@
 {
   "linters": {
-    "*.ts": ["npm run pretty-quick-current-branch", "tslint --fix", "git add"],
+    "*.ts": ["npm run pretty-quick-current-branch", "tslint -p tsconfig.json --fix", "git add"],
     "*.css": ["npm run pretty-quick-current-branch", "npm run stylelint-current-branch", "git add"],
     "*.scss": ["npm run pretty-quick-current-branch", "npm run stylelint-current-branch --syntax=scss", "git add"],
     "*.{png,jpeg,jpg,gif,svg}": ["imagemin-lint-staged", "git add"],
