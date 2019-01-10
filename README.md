@@ -1,7 +1,6 @@
 # Angular Boilerplate Application
 
 [![Build Status](https://travis-ci.org/BhavinPatel04/ngx-barebone-app.svg?branch=master)](https://travis-ci.org/BhavinPatel04/ngx-barebone-app)
-[![npm version](https://badge.fury.io/js/ngx-barebone-app.svg)](https://badge.fury.io/js/ngx-barebone-app)
 
 ## Features
 
