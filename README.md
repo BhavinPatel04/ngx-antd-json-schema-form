@@ -1,5 +1,7 @@
 # Angular Boilerplate Application
 
+[![Build Status](https://travis-ci.org/BhavinPatel04/ngx-barebone-app.svg?branch=master)](https://travis-ci.org/BhavinPatel04/ngx-barebone-app)
+
 ## Features
 
 ```
