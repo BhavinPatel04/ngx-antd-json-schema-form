@@ -22,6 +22,10 @@ install:
 script:
   - npm run test-ci
 
+after_success:
+  - npm run gh-pages
+  - npm run coveralls && npm run codecov
+
 notifications:
   email:
     on_failure: change

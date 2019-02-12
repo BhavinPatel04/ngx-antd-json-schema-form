@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-barebone-app": {
+    "ngx-braebone-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,13 +17,25 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/ngx-braebone-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "node_modules/prismjs/themes/prism.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -72,24 +84,24 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-barebone-app:build"
+            "browserTarget": "ngx-braebone-app:build"
           },
           "configurations": {
             "dev": {
-              "browserTarget": "ngx-barebone-app:build:dev"
+              "browserTarget": "ngx-braebone-app:build:dev"
             },
             "production": {
-              "browserTarget": "ngx-barebone-app:build:production"
+              "browserTarget": "ngx-braebone-app:build:production"
             },
             "test": {
-              "browserTarget": "ngx-barebone-app:build:test"
+              "browserTarget": "ngx-braebone-app:build:test"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-barebone-app:build"
+            "browserTarget": "ngx-braebone-app:build"
           }
         },
         "test": {
@@ -114,7 +126,7 @@
         }
       }
     },
-    "ngx-barebone-app-e2e": {
+    "ngx-braebone-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -123,11 +135,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-barebone-app:serve"
+            "devServerTarget": "ngx-braebone-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-barebone-app:serve:production"
+              "devServerTarget": "ngx-braebone-app:serve:production"
             }
           }
         },
@@ -139,7 +151,40 @@
           }
         }
       }
+    },
+    "ngx-antd-json-schema-form": {
+      "root": "projects/ngx-antd-json-schema-form",
+      "sourceRoot": "projects/ngx-antd-json-schema-form/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-antd-json-schema-form/tsconfig.lib.json",
+            "project": "projects/ngx-antd-json-schema-form/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-antd-json-schema-form/src/test.ts",
+            "tsConfig": "projects/ngx-antd-json-schema-form/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-antd-json-schema-form/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-antd-json-schema-form/tsconfig.lib.json",
+              "projects/ngx-antd-json-schema-form/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "ngx-barebone-app"
+  "defaultProject": "ngx-braebone-app"
 }

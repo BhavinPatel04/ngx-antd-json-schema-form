@@ -1,0 +1,30 @@
+<nz-form-item
+  class="json-form-schema-field {{ config.itemClass ? config.itemClass : settings.itemClass }}"
+  [formGroup]="group"
+  nz-row
+  [nzGutter]="config.nzGutter ? config.nzGutter : settings.nzGutter"
+  nzFlex
+>
+  <nz-form-label
+    nz-col
+    [nzSpan]="config.nzSpanLabel ? config.nzSpanLabel : settings.nzSpanLabel"
+    [nzRequired]="config.required"
+    [nzFor]="config.key"
+    [ngClass]="config.labelClass ? config.labelClass : settings.labelClass"
+  >
+    <span [innerHTML]="config.label"></span>
+  </nz-form-label>
+  <nz-form-control nz-col [nzSpan]="config.nzSpanControl ? config.nzSpanControl : settings.nzSpanControl">
+    <input
+      nz-input
+      [readonly]="config.readonly"
+      [formControlName]="config.key"
+      [id]="config.key"
+      [placeholder]="config.placeholder || config.label"
+      [ngClass]="config.fieldClass ? config.fieldClass : settings.fieldClass"
+    />
+    <nz-form-explain *ngIf="group.get(config.key).dirty && group.get(config.key).errors">
+      Please enter {{ config.label }}
+    </nz-form-explain>
+  </nz-form-control>
+</nz-form-item>

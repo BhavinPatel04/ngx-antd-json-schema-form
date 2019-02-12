@@ -46,8 +46,8 @@ describe("AppComponent", () => {
     expect(component).toBeDefined();
   });
 
-  it(`should have as title 'ngx-barebone-app'`, () => {
-    expect(component.title).toEqual("ngx-barebone-app");
+  it(`should have as title 'ngx-braebone-app'`, () => {
+    expect(component.title).toEqual("ngx-braebone-app");
   });
 
   it(`should save route data params`, inject([SharedService], (ss: SharedService) => {

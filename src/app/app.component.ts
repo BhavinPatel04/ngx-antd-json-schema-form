@@ -14,7 +14,7 @@ const _ = require("lodash");
   providers: [Title, SharedService]
 })
 export class AppComponent implements OnInit {
-  title = "ngx-barebone-app";
+  title = "ngx-braebone-app";
 
   public constructor(
     titleService: Title,

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ngx-antd-json-schema-form",
+  "whitelistedNonPeerDependencies": ["."],
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "externals": {
+      "ng-zorro-antd": "ng-zorro-antd",
+      "prismjs": "prismjs"
+    },
+    "umdModuleIds": {
+      "ng-zorro-antd": "ng-zorro-antd",
+      "prismjs": "prismjs"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<nz-form-item
+  class="json-form-schema-field json-schema-form-button {{ config.itemClass ? config.itemClass : settings.itemClass }}"
+  [formGroup]="group"
+  nz-row
+  [nzGutter]="config.nzGutter ? config.nzGutter : settings.nzGutter"
+  nzFlex
+>
+  <nz-form-control
+    nz-col
+    [nzSpan]="config.nzSpanControl ? config.nzSpanControl : settings.nzSpanControl"
+    [nzOffset]="config.nzSpanLabel ? config.nzSpanLabel : settings.nzSpanLabel"
+  >
+    <button
+      nz-button
+      nzType="primary"
+      [disabled]="config.disabled"
+      type="submit"
+      [ngClass]="config.fieldClass ? config.fieldClass : settings.fieldClass"
+    >
+      {{ config.label }}
+    </button>
+  </nz-form-control>
+</nz-form-item>

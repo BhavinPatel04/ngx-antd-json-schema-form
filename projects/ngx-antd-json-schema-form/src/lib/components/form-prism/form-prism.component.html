@@ -1,0 +1,25 @@
+<nz-form-item
+  class="json-form-schema-field {{ config.itemClass ? config.itemClass : settings.itemClass }}"
+  [formGroup]="group"
+  nz-row
+  [nzGutter]="config.nzGutter ? config.nzGutter : settings.nzGutter"
+  nzFlex
+>
+  <nz-form-label
+    nz-col
+    [nzSpan]="config.nzSpanLabel ? config.nzSpanLabel : settings.nzSpanLabel"
+    [nzRequired]="config.required"
+    [nzFor]="config.key"
+    [ngClass]="config.labelClass ? config.labelClass : settings.labelClass"
+  >
+    {{ config.label }}
+  </nz-form-label>
+  <nz-form-control nz-col [nzSpan]="config.nzSpanControl ? config.nzSpanControl : settings.nzSpanControl">
+    <div hidden #raw style="display: none">
+      <ng-content></ng-content>
+    </div>
+    <pre class="prism-pre" [ngClass]="config.fieldClass ? config.fieldClass : settings.fieldClass">
+      <code class="prism-code language-{{config.language}}" #code></code>
+    </pre>
+  </nz-form-control>
+</nz-form-item>

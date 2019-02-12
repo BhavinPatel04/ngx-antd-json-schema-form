@@ -64,3 +64,6 @@ typings/
 /coverage
 
 src/config/config.ts
+
+# Dist
+dist/

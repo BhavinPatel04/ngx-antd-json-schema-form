@@ -1,0 +1,35 @@
+{
+  "name": "ngx-antd-json-schema-form",
+  "version": "0.0.1",
+  "description": "JSON form schema using ant-design and prismjs",
+  "author": "Bhavin Patel <bhavin.ptl04@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/BhavinPatel04/ngx-antd-json-schema-form#readme",
+  "bugs": "https://github.com/BhavinPatel04/ngx-antd-json-schema-form/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BhavinPatel04/ngx-antd-json-schema-form"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular4",
+    "angular5",
+    "angular6",
+    "angular7",
+    "ng2",
+    "ng4",
+    "ng5",
+    "ng7",
+    "ngx",
+    "json-schema-form"
+  ],
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0",
+    "ng-zorro-antd": "^7.0.0-rc.3",
+    "@types/prismjs": "^1.9.0",
+    "prismjs": "^1.15.0"
+  }
+}

@@ -5,8 +5,8 @@
 export const Config = {
   production: false,
 
-  name: "Harvest",
-  title: "Harvest",
+  name: "ngx-braebone-app",
+  title: "ngx-braebone-app",
 
   uri: {
     api: "api"
