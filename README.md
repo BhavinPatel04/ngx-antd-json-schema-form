@@ -1,11 +1,11 @@
 # ngx-antd-json-schema-form
 
-> JSON schema form with ant-design anf prsimjs
+> JSON schema form with ant-design and prsimjs
 
 [![Build Status](https://travis-ci.org/BhavinPatel04/ngx-antd-json-schema-form.svg?branch=master)](https://travis-ci.org/BhavinPatel04/ngx-antd-json-schema-form)
 [![npm version](https://badge.fury.io/js/ngx-antd-json-schema-form.svg)](https://badge.fury.io/js/ngx-antd-json-schema-form)
 
-This plugin uses bootstrap, moment.js, lodash and font-awesome.
+This plugin uses ng-zorro-antd and prismjs
 
 Demo: https://bhavinpatel04.github.io/ngx-antd-json-schema-form/
 
@@ -33,7 +33,22 @@ import { AppComponent } from "./app.component";
 export class AppModule {}
 ```
 
+Add **Styles** in `angular.json`:
+
+```
+  ...
+  "assets": [...],
+  "styles": [
+    "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+    "node_modules/prismjs/themes/prism.css",
+    "src/styles.scss"
+  ],
+  ...
+```
+
 ## Usage example
+
+> The component using this library should have `encapsulation: ViewEncapsulation.None`
 
 Html:
 
@@ -58,7 +73,7 @@ schema: [
     label: "sla",
     type: "string",
     required: true,
-    value: "3"
+    value: ""
   },
   {
     key: "isPartitioned",
