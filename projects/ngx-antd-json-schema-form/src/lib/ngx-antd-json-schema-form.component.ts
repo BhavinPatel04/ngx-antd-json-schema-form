@@ -18,8 +18,8 @@ import { FormItem, FormSettings } from "./models/index";
   encapsulation: ViewEncapsulation.None
 })
 export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
-  @Input() schema: any;
-  @Input() settings: FormSettings;
+  @Input() schema: any = [];
+  @Input() settings: FormSettings = this.getDefaultSettings();
 
   @Output()
   submit: EventEmitter<any> = new EventEmitter<any>();
@@ -39,7 +39,7 @@ export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
     }
     if (changes["settings"]) {
       const newSettings = changes["settings"]["currentValue"];
-      this.settings = Object.assign(this.getDefaultSettings(), newSettings);
+      this.settings = Object.assign(this.settings, newSettings);
     }
   }
 
@@ -63,13 +63,15 @@ export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
   }
 
   getDefaultSettings(): FormSettings {
-    return {
-      nzGutter: 8,
-      itemClass: "",
-      nzSpanLabel: 8,
-      labelClass: "",
-      nzSpanControl: 16,
-      fieldClass: ""
-    };
+    return JSON.parse(
+      JSON.stringify({
+        nzGutter: 8,
+        itemClass: "",
+        nzSpanLabel: 8,
+        labelClass: "",
+        nzSpanControl: 16,
+        fieldClass: ""
+      })
+    );
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "ngx-antd-json-schema-form",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "JSON form schema using ant-design and prismjs",
   "author": "Bhavin Patel <bhavin.ptl04@gmail.com>",
   "license": "MIT",
