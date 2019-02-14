@@ -1,1 +1,11 @@
-<div class="barebone-app"><router-outlet></router-outlet></div>
+<div class="barebone-app">
+  <div class="page-title">
+    <h2>Sample Form</h2>
+  </div>
+  <div class="page-content">
+    <div class="form-container">
+      <ngx-antd-json-schema-form *ngIf="schema" [schema]="schema" [settings]="settings" (submit)="submit($event)">
+      </ngx-antd-json-schema-form>
+    </div>
+  </div>      
+</div>

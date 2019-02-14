@@ -4,6 +4,8 @@ import { Router, ActivatedRoute, NavigationEnd, Event } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { AppConfig } from "./app.config";
 import { SharedService } from "../common/services/shared.service";
+import { APP_CONSTANTS } from './app.constants';
+import { FormSettings } from 'ngx-antd-json-schema-form';
 
 declare var require: any;
 const _ = require("lodash");
@@ -15,6 +17,11 @@ const _ = require("lodash");
 })
 export class AppComponent implements OnInit {
   title = "ngx-braebone-app";
+  sampleSchema: Object = APP_CONSTANTS.SAMPLE_SCHEMA;
+  schema: Object = {};
+  settings: FormSettings = {
+    fieldClass: "field-class"
+  };
 
   public constructor(
     titleService: Title,
@@ -26,6 +33,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.schema = this.sampleSchema;
+    
     // get current router and set to shared service
     this.router.events
       .pipe(
