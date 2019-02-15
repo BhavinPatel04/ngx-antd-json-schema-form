@@ -25,4 +25,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.schema = this.sampleSchema;
   }
+
+  submit(event) {
+    console.log(event);
+  }
 }

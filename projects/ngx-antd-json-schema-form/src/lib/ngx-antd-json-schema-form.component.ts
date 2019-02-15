@@ -22,6 +22,8 @@ export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
   @Input() settings: FormSettings = this.getDefaultSettings();
 
   @Output()
+  schemaChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output()
   submit: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;
@@ -30,12 +32,14 @@ export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.form = this.createGroup(this.schema);
+    this.onFormChange();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes["schema"]) {
       this.schema = changes["schema"]["currentValue"];
       this.form = this.createGroup(this.schema);
+      this.onFormChange();
     }
     if (changes["settings"]) {
       const newSettings = changes["settings"]["currentValue"];
@@ -47,6 +51,15 @@ export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
     event.preventDefault();
     event.stopPropagation();
     this.submit.emit(this.form.getRawValue());
+  }
+
+  onFormChange() {
+    this.form.valueChanges.subscribe((val) => {
+      this.schema.forEach((item: FormItem) => {
+        if (val[item["key"]]) { item["value"] = val[item["key"]]; }
+      });
+      this.schemaChange.emit(this.schema);
+    });
   }
 
   createGroup(schema) {

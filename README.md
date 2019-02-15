@@ -9,6 +9,10 @@ This plugin uses ng-zorro-antd and prismjs
 
 Demo: https://bhavinpatel04.github.io/ngx-antd-json-schema-form/
 
+## Features
+
+Emits the new updated schema when the form value changes
+
 ## Installation
 
 Install the plugin from npm:
@@ -53,7 +57,7 @@ Add **Styles** in `angular.json`:
 Html:
 
 ```html
-<ngx-antd-json-schema-form [schema]="schema" [settings]="settings" (submit)="submit($event)">
+<ngx-antd-json-schema-form [(schema)]="schema" [settings]="settings" (submit)="submit($event)">
 </ngx-antd-json-schema-form>
 ```
 

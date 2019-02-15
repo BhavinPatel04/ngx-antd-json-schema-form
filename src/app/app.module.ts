@@ -4,7 +4,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, Injector } from "@angular/core";
 
-import { NgxAntdJsonSchemaFormModule } from "ngx-antd-json-schema-form";
+// import { NgxAntdJsonSchemaFormModule } from "ngx-antd-json-schema-form";
+import { NgxAntdJsonSchemaFormModule } from "../../projects/ngx-antd-json-schema-form/src/lib/ngx-antd-json-schema-form.module";
 
 import { AppInitService } from "src/common/services/app.init.service";
 import { InjectorService } from "src/common/services/injector.service";
