@@ -109,6 +109,22 @@ export const APP_CONSTANTS = {
       value: "2019-01-27 12:00:00"
     },
     {
+      key: "selectOption",
+      label: "Select Option",
+      type: "select",
+      options: [
+        {
+          label: "Option 1",
+          value: "1"
+        },
+        {
+          label: "Option 2",
+          value: "2"
+        }
+      ],
+      value: "1"
+    },
+    {
       key: "columns",
       label: "columns",
       type: "prism",
