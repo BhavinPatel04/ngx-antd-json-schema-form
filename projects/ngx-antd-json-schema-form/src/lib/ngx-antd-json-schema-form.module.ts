@@ -14,6 +14,7 @@ import { FormButtonComponent } from "./components/form-button/form-button.compon
 import { FormInputComponent } from "./components/form-input/form-input.component";
 import { FormSelectComponent } from "./components/form-select/form-select.component";
 import { FormCheckboxComponent } from "./components/form-checkbox/form-checkbox.component";
+import { FormRadioComponent } from "./components/form-radio/form-radio.component";
 import { FormTextareaComponent } from "./components/form-textarea/form-textarea.component";
 import { PrismComponent } from "./components/form-prism/form-prism.component";
 
@@ -22,6 +23,7 @@ const childComponents = [
   FormInputComponent,
   FormSelectComponent,
   FormCheckboxComponent,
+  FormRadioComponent,
   FormTextareaComponent,
   PrismComponent
 ];

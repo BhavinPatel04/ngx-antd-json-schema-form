@@ -1,21 +1,21 @@
-import { FormSelectOption } from "./formSelectOption.interface";
+import { FormOption } from "./formOption.interface";
+import { FormCommonSettings } from "./settings.interface";
 
-export interface FormItem {
+export interface FormItem extends FormCommonSettings {
   key: string;
   label: string;
   type: string;
   placeholder?: string;
-  options?: FormSelectOption[];
+  options?: FormOption[];
   disabled?: boolean;
   readonly?: boolean;
   value?: any;
-  class?: string;
   required?: boolean;
   language?: string;
-  nzGutter?: number;
-  itemClass?: string;
-  nzSpanLabel?: number;
-  labelClass?: string;
-  nzSpanControl?: number;
-  fieldClass?: string;
+}
+
+export interface FormSubmitButton extends FormCommonSettings {
+  show?: boolean;
+  label?: string;
+  disabled?: boolean;
 }

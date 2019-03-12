@@ -9,7 +9,7 @@ import {
   OnInit
 } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { FormItem, FormSettings } from "./models/index";
+import { FormItem, FormSettings, FormSubmitButton, FormCommonSettings } from "./models/index";
 
 @Component({
   selector: "ngx-antd-json-schema-form",
@@ -27,15 +27,19 @@ export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
   submit: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;
+  submitButtonConfig: FormItem;
 
   constructor() {}
 
-  ngOnInit() {
-    this.form = this.createGroup(this.schema);
-    this.onFormChange();
+  ngOnInit(): void {
+    this.submitButtonConfig = this.getSubmitButtonConfig();
+    if (!this.form) {
+      this.form = this.createGroup(this.schema);
+      this.onFormChange();
+    }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes["schema"]) {
       this.schema = changes["schema"]["currentValue"];
       this.form = this.createGroup(this.schema);
@@ -43,48 +47,90 @@ export class NgxAntdJsonSchemaFormComponent implements OnInit, OnChanges {
     }
     if (changes["settings"]) {
       const newSettings = changes["settings"]["currentValue"];
-      this.settings = Object.assign(this.settings, newSettings);
+      const defaultSettings = this.getDefaultSettings();
+      this.settings = Object.assign(defaultSettings, newSettings);
     }
   }
 
-  handleSubmit(event: Event) {
+  handleSubmit(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
     this.submit.emit(this.form.getRawValue());
   }
 
-  onFormChange() {
+  onFormChange(): void {
     this.form.valueChanges.subscribe((val) => {
+      let isFormValid = true;
       this.schema.forEach((item: FormItem) => {
-        if (val[item["key"]]) { item["value"] = val[item["key"]]; }
+        if (val[item.key] !== undefined) {
+          item.value = val[item.key];
+        }
+        if (item.required && !this.isValueValid(item.value)) {
+          isFormValid = false;
+        }
       });
+      this.submitButtonConfig = this.getSubmitButtonConfig({ disabled: !isFormValid });
       this.schemaChange.emit(this.schema);
     });
   }
 
-  createGroup(schema) {
+  createGroup(schema): FormGroup {
     const group: any = {};
 
     if (schema) {
+      let isFormValid = true;
       schema.forEach((item: FormItem) => {
-        const formState = { value: item.value || "", disabled: item.disabled || false };
+        if (item.required && !this.isValueValid(item.value)) {
+          isFormValid = false;
+        }
+        const value = item.value !== undefined ? item.value : "";
+        const formState = { value, disabled: item.disabled || false };
         group[item.key] = item.required ? new FormControl(formState, Validators.required) : new FormControl(formState);
       });
+      this.submitButtonConfig = this.getSubmitButtonConfig({ disabled: !isFormValid });
     }
 
     return new FormGroup(group);
   }
 
+  isValueValid(value): boolean {
+    let valid = true;
+    valid = value !== undefined;
+    if (typeof value === "string") {
+      valid = !!value;
+    }
+    return valid;
+  }
+
   getDefaultSettings(): FormSettings {
+    const formCommonSettings: FormCommonSettings = {
+      nzGutter: 8,
+      itemClass: "",
+      nzSpanLabel: 8,
+      labelClass: "",
+      nzSpanControl: 16,
+      fieldClass: ""
+    };
     return JSON.parse(
       JSON.stringify({
-        nzGutter: 8,
-        itemClass: "",
-        nzSpanLabel: 8,
-        labelClass: "",
-        nzSpanControl: 16,
-        fieldClass: ""
-      })
+        ...formCommonSettings,
+        submitButton: {
+          show: true,
+          label: "Submit",
+          disabled: false,
+          ...formCommonSettings
+        } as FormSubmitButton
+      } as FormSettings)
     );
+  }
+
+  getSubmitButtonConfig(newConfig: FormSubmitButton = {}): FormItem {
+    const defaultConfig = {
+      key: "submit",
+      type: "button",
+      ...this.settings.submitButton,
+      fieldClass: "submit-button-class"
+    } as FormItem;
+    return Object.assign(defaultConfig, newConfig);
   }
 }

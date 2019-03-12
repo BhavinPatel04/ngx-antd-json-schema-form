@@ -17,13 +17,16 @@ import { FormCheckboxComponent } from "../components/form-checkbox/form-checkbox
 import { FormSelectComponent } from "../components/form-select/form-select.component";
 import { FormTextareaComponent } from "../components/form-textarea/form-textarea.component";
 import { PrismComponent } from "../components/form-prism/form-prism.component";
+import { FormRadioComponent } from "../components/form-radio/form-radio.component";
 
 const components: { [type: string]: Type<Field> } = {
   button: FormButtonComponent,
-  string: FormInputComponent,
+  input: FormInputComponent,
   select: FormSelectComponent,
-  bool: FormCheckboxComponent,
-  text: FormTextareaComponent,
+  checkbox: FormCheckboxComponent,
+  radio: FormRadioComponent,
+  "radio-button": FormRadioComponent,
+  textarea: FormTextareaComponent,
   prism: PrismComponent
 };
 

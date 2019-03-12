@@ -12,26 +12,33 @@
     [nzFor]="config.key"
     [ngClass]="config.labelClass ? config.labelClass : settings.labelClass"
   >
-    <span [innerHTML]="config.label"></span>
+    {{ config.label }}
   </nz-form-label>
   <nz-form-control nz-col [nzSpan]="config.nzSpanControl ? config.nzSpanControl : settings.nzSpanControl">
-    <nz-select
+    <nz-radio-group
       [formControlName]="config.key"
       [(ngModel)]="config.value"
-      nzAllowClear
-      [nzPlaceHolder]="config.placeholder || config.label"
-      [ngClass]="config.fieldClass ? config.fieldClass : settings.fieldClass"
+      nzName="{{ config.key }}-radio-group"
+      [nzButtonStyle]="'solid'"
     >
-      <nz-option
+      <label
+        [hidden]="config.type === 'radio-button'"
         *ngFor="let option of config.options"
+        nz-radio
         [nzValue]="option.value"
-        [nzLabel]="option.label"
-        [nzDisabled]="option.disabled"
+        [ngClass]="config.fieldClass ? config.fieldClass : settings.fieldClass"
       >
-      </nz-option>
-    </nz-select>
-    <nz-form-explain *ngIf="group.get(config.key).dirty && group.get(config.key).errors">
-      Please choose an option
-    </nz-form-explain>
+        {{ option.label }}
+      </label>
+      <label
+        [hidden]="config.type === 'radio'"
+        *ngFor="let option of config.options"
+        nz-radio-button
+        [nzValue]="option.value"
+        [ngClass]="config.fieldClass ? config.fieldClass : settings.fieldClass"
+      >
+        {{ option.label }}
+      </label>
+    </nz-radio-group>
   </nz-form-control>
 </nz-form-item>

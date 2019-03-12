@@ -1,116 +1,58 @@
+import { FormItem, FormOption } from "../../projects/ngx-antd-json-schema-form/src/lib/models";
+
 export const APP_CONSTANTS = {
   SAMPLE_SCHEMA: [
     {
-      key: "platform",
-      label: "platform",
-      type: "string",
+      key: "input",
+      label: "input",
+      type: "input",
       required: true,
-      value: "sp2"
+      value: ""
     },
     {
-      key: "sae",
-      label: "sae",
-      type: "string",
-      required: true,
-      value: "bhavinpatel"
-    },
-    {
-      key: "sla",
-      label: "sla",
-      type: "string",
-      required: true,
-      value: "3"
-    },
-    {
-      key: "name",
-      label: "name",
-      type: "string",
-      required: true,
-      value: "blah"
-    },
-    {
-      key: "version",
-      label: "version",
-      type: "string",
-      required: true,
-      value: "1.0.0"
-    },
-    {
-      key: "description",
-      label: "description",
-      type: "string",
-      required: true,
-      value: "desc for blah"
-    },
-    {
-      key: "isPartitioned",
-      label: "isPartitioned",
-      type: "bool",
+      key: "checkbox",
+      label: "checkbox",
+      type: "checkbox",
       required: true,
       value: true
     },
     {
-      key: "versionDescription",
-      label: "versionDescription",
-      type: "string",
+      key: "radio",
+      label: "radio",
+      type: "radio",
       required: true,
-      value: "initial version"
+      value: "yes",
+      options: [
+        {
+          label: "Yes",
+          value: "yes"
+        },
+        {
+          label: "No",
+          value: "No"
+        }
+      ] as FormOption[]
     },
     {
-      key: "isDeactivated",
-      label: "isDeactivated",
-      type: "bool",
-      required: false
+      key: "radio-button",
+      label: "radio-button",
+      type: "radio-button",
+      required: false,
+      value: false,
+      options: [
+        {
+          label: "Yes",
+          value: true
+        },
+        {
+          label: "No",
+          value: false
+        }
+      ] as FormOption[]
     },
     {
-      key: "status",
-      label: "status",
-      type: "string",
-      required: false
-    },
-    {
-      key: "health",
-      label: "health",
-      type: "string",
-      required: false
-    },
-    {
-      key: "dataRefreshDt",
-      label: "dataRefreshDt",
-      type: "string",
-      required: false
-    },
-    {
-      key: "createdBy",
-      label: "createdBy",
-      type: "string",
-      required: true,
-      value: "someBlah"
-    },
-    {
-      key: "createdDt",
-      label: "createdDt",
-      type: "string",
-      required: true,
-      value: "2019-01-27 12:00:00"
-    },
-    {
-      key: "updatedBy",
-      label: "updatedBy",
-      type: "string",
-      required: true,
-      value: "anotherBlah"
-    },
-    {
-      key: "updatedDt",
-      label: "updatedDt",
-      type: "string",
-      required: true,
-      value: "2019-01-27 12:00:00"
-    },
-    {
-      key: "selectOption",
-      label: "Select Option",
+      key: "select",
+      label: "select",
       type: "select",
       options: [
         {
@@ -121,12 +63,19 @@ export const APP_CONSTANTS = {
           label: "Option 2",
           value: "2"
         }
-      ],
+      ] as FormOption[],
       value: "1"
     },
     {
-      key: "columns",
-      label: "columns",
+      key: "textarea",
+      label: "textarea",
+      type: "textarea",
+      required: false,
+      value: ""
+    },
+    {
+      key: "prism",
+      label: "prism",
       type: "prism",
       language: "typescript",
       required: true,
@@ -134,12 +83,6 @@ export const APP_CONSTANTS = {
         "[\n  {\n  \"name\": \"user_id\",\n  \"isPii\": false,\n  },\n  {\n  \"name\": \"user_name\",\n  \"isPii\": true,\n }\n]",
       disabled: true,
       fieldClass: "prism-class"
-    },
-    {
-      key: "submit",
-      label: "Submit",
-      type: "button",
-      class: "submit-button-container"
     }
-  ]
+  ] as FormItem[]
 };

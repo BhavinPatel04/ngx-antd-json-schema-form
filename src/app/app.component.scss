@@ -5,12 +5,19 @@
 
 .page-content {
   width: 100%;
-  margin: 0 18em;
+  margin: 2em;
+
+  [nz-col] {
+    vertical-align: top;
+  }
+
+  .form-container,
+  .form-data {
+    padding: 0 1em;
+  }
 }
 
 .form-container {
-  width: 50%;
-
   .prism-class {
     height: 15em;
     overflow: auto;

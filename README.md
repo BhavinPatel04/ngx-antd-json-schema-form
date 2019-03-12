@@ -118,24 +118,24 @@ settings: FormSettings = {
 
 ## Item Options
 
-| Option        | Type               | Description      |
-| ------------- | ------------------ | ---------------- |
-| key           | string             | key              |
-| label         | string             | label            |
-| type          | string             | type             |
-| placeholder   | string             | placeholder      |
-| options       | FormSelectOption[] | Array of options |
-| disabled      | boolean            | disabled         |
-| readonly      | boolean            | readonly         |
-| value         | string             | value            |
-| required      | boolean            | required         |
-| language      | string             | language         |
-| nzGutter      | number             | nzGutter         |
-| itemClass     | string             | itemClass        |
-| nzSpanLabel   | number             | nzSpanLabel      |
-| labelClass    | string             | labelClass       |
-| nzSpanControl | number             | nzSpanControl    |
-| fieldClass    | string             | fieldClass       |
+| Option        | Type         | Description      |
+| ------------- | ------------ | ---------------- |
+| key           | string       | key              |
+| label         | string       | label            |
+| type          | string       | type             |
+| placeholder   | string       | placeholder      |
+| options       | FormOption[] | Array of options |
+| disabled      | boolean      | disabled         |
+| readonly      | boolean      | readonly         |
+| value         | string       | value            |
+| required      | boolean      | required         |
+| language      | string       | language         |
+| nzGutter      | number       | nzGutter         |
+| itemClass     | string       | itemClass        |
+| nzSpanLabel   | number       | nzSpanLabel      |
+| labelClass    | string       | labelClass       |
+| nzSpanControl | number       | nzSpanControl    |
+| fieldClass    | string       | fieldClass       |
 
 ## Settings
 

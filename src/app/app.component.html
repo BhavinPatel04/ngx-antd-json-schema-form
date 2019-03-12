@@ -3,9 +3,20 @@
     <h2>Sample Form</h2>
   </div>
   <div class="page-content">
-    <div class="form-container">
-      <ngx-antd-json-schema-form *ngIf="schema" [(schema)]="schema" [settings]="settings" (submit)="submit($event)">
-      </ngx-antd-json-schema-form>
+    <div nz-row [nzGutter]="{ xs: 24, sm: 24, md: 24, lg: 24, xl: 24, xxl: 24 }">
+      <div nz-col nzSpan="12">
+        <div class="form-container">
+          <ngx-antd-json-schema-form *ngIf="schema" [(schema)]="schema" [settings]="settings" (submit)="submit($event)">
+          </ngx-antd-json-schema-form>
+        </div>
+      </div>
+      <div nz-col nzSpan="12">
+        <div class="form-data">
+          <b>Form Data:</b>
+          <pre><code><div [innerHTML]="formData"></div></code></pre>
+        </div>
+      </div>
     </div>
   </div>
+  <nz-divider></nz-divider>
 </div>

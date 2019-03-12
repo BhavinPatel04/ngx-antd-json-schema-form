@@ -15,8 +15,11 @@ export class AppComponent implements OnInit {
   sampleSchema: Object = APP_CONSTANTS.SAMPLE_SCHEMA;
   schema: Object = {};
   settings: FormSettings = {
+    nzSpanLabel: 4,
+    nzSpanControl: 20,
     fieldClass: "field-class"
   };
+  formData = "";
 
   public constructor(titleService: Title) {
     titleService.setTitle(AppConfig.title);
@@ -27,6 +30,7 @@ export class AppComponent implements OnInit {
   }
 
   submit(event) {
+    this.formData = JSON.stringify(event, null, 2);
     console.log(event);
   }
 }
