@@ -26,6 +26,9 @@ THE SOFTWARE.
 ng-zorro-antd
 MIT
 
+ngx-antd-json-schema-form
+MIT
+
 undefined
 
 hammerjs
@@ -390,7 +393,7 @@ MIT
 @angular/animations
 MIT
 
-ngx-antd-json-schema-form
+@angular/cdk/scrolling
 
 zone.js
 MIT
