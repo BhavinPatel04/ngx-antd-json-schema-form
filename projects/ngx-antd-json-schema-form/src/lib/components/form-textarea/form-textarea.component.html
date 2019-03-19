@@ -1,4 +1,5 @@
 <nz-form-item
+  *ngIf="!config.hidden"
   class="json-form-schema-field {{ config.itemClass ? config.itemClass : settings.itemClass }}"
   [formGroup]="group"
   nz-row
@@ -25,7 +26,7 @@
       [ngClass]="config.fieldClass ? config.fieldClass : settings.fieldClass"
     ></textarea>
     <nz-form-explain *ngIf="group.get(config.key).dirty && group.get(config.key).errors">
-      Please input your username!
+      Please enter {{ config.label }}
     </nz-form-explain>
   </nz-form-control>
 </nz-form-item>

@@ -35,6 +35,11 @@ export class PrismComponent implements AfterViewInit, AfterContentInit, OnChange
   }
 
   ngAfterViewInit() {
+    this.observer.observe(this.rawViewChild.nativeElement, {
+      characterData: true,
+      childList: true,
+      subtree: true
+    });
     this.onContentChanged();
   }
 
@@ -44,11 +49,6 @@ export class PrismComponent implements AfterViewInit, AfterContentInit, OnChange
 
   ngAfterContentInit() {
     this.observer = new MutationObserver(this.onContentChanged.bind(this));
-    this.observer.observe(this.rawViewChild.nativeElement, {
-      characterData: true,
-      childList: true,
-      subtree: true
-    });
   }
 
   ngOnDestroy() {

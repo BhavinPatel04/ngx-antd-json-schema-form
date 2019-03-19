@@ -6,6 +6,7 @@ export interface FormItem extends FormCommonSettings {
   label: string;
   type: string;
   placeholder?: string;
+  hidden?: boolean;
   options?: FormOption[];
   disabled?: boolean;
   readonly?: boolean;

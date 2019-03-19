@@ -10,6 +10,14 @@ export const APP_CONSTANTS = {
       value: ""
     },
     {
+      key: "input-hidden",
+      label: "input-hidden",
+      type: "input",
+      required: true,
+      hidden: true,
+      value: "blah-blah"
+    },
+    {
       key: "checkbox",
       label: "checkbox",
       type: "checkbox",
@@ -70,7 +78,7 @@ export const APP_CONSTANTS = {
       key: "textarea",
       label: "textarea",
       type: "textarea",
-      required: false,
+      required: true,
       value: ""
     },
     {

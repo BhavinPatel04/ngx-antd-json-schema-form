@@ -1,11 +1,11 @@
-<form class="json-schema-form" nz-form [formGroup]="form" (submit)="handleSubmit($event)">
-  <ng-container *ngFor="let field of schema" dynamicField [config]="field" [settings]="settings" [group]="form">
+<form *ngIf="form" class="json-schema-form" nz-form [formGroup]="form" (submit)="handleSubmit($event)">
+  <ng-container *ngFor="let field of schema" dynamicField [config]="field" [settings]="formSettings" [group]="form">
   </ng-container>
   <json-schema-form-button
-    *ngIf="settings.submitButton.show"
+    *ngIf="formSettings.submitButton.show"
     [group]="form"
     [config]="submitButtonConfig"
-    [settings]="settings"
+    [settings]="formSettings"
   >
   </json-schema-form-button>
 </form>

@@ -6,13 +6,33 @@
     <div nz-row [nzGutter]="{ xs: 24, sm: 24, md: 24, lg: 24, xl: 24, xxl: 24 }">
       <div nz-col nzSpan="12">
         <div class="form-container">
-          <ngx-antd-json-schema-form *ngIf="schema" [(schema)]="schema" [settings]="settings" (submit)="submit($event)">
+          <ngx-antd-json-schema-form
+            *ngIf="schema && !loading"
+            [schema]="schema"
+            [settings]="settings"
+            (registeredForm)="form = $event"
+            (formValid)="isFormValid = $event"
+            (formChange)="onFormChange($event)"
+            (formTouch)="formTouched = $event"
+            (submit)="submit($event)"
+          >
           </ngx-antd-json-schema-form>
         </div>
       </div>
       <div nz-col nzSpan="12">
         <div class="form-data">
-          <b>Form Data:</b>
+          <button nz-button nzType="primary" (click)="changeSettings()">Change Settings</button>
+          <br />
+          <b>Form (formGroup to give control over form): </b> {{ form }}
+          <br />
+          <b>Form Valid: </b> {{ isFormValid }}
+          <br />
+          <b>Form Touched:</b> {{ formTouched }}
+          <br />
+          <b>Form Data on form change:</b>
+          <pre><code><div [innerHTML]="newFormData"></div></code></pre>
+          <br />
+          <b>Form Data after submit:</b>
           <pre><code><div [innerHTML]="formData"></div></code></pre>
         </div>
       </div>

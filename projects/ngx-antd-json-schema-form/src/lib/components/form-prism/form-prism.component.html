@@ -1,4 +1,5 @@
 <nz-form-item
+  *ngIf="!config.hidden"
   class="json-form-schema-field {{ config.itemClass ? config.itemClass : settings.itemClass }}"
   [formGroup]="group"
   nz-row
