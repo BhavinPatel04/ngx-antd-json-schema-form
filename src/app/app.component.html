@@ -7,7 +7,7 @@
       <div nz-col nzSpan="12">
         <div class="form-container">
           <ngx-antd-json-schema-form
-            *ngIf="schema && !loading"
+            *ngIf="schema"
             [schema]="schema"
             [settings]="settings"
             (registeredForm)="form = $event"
