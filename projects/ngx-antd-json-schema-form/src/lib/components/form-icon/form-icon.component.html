@@ -1,0 +1,31 @@
+<nz-form-item
+  *ngIf="!config.hidden"
+  class="json-form-schema-field {{ config.itemClass ? config.itemClass : settings.itemClass }}"
+  [formGroup]="group"
+  nz-row
+  [nzGutter]="config.nzGutter ? config.nzGutter : settings.nzGutter"
+  nzFlex
+>
+  <nz-form-label
+    nz-col
+    [nzSpan]="config.nzSpanLabel ? config.nzSpanLabel : settings.nzSpanLabel"
+    [nzRequired]="config.required"
+    [nzFor]="config.key"
+    [ngClass]="config.labelClass ? config.labelClass : settings.labelClass"
+  >
+    {{ config.label }}
+  </nz-form-label>
+  <nz-form-control nz-col [nzSpan]="config.nzSpanControl ? config.nzSpanControl : settings.nzSpanControl">
+    <i
+      nz-icon
+      [nzType]="config.icon.type"
+      [nzTheme]="config.icon.theme"
+      [nzSpin]="config.icon.spin"
+      [nzTwotoneColor]="config.icon.twotoneColor"
+      [nzIconfont]="config.icon.iconFont"
+      [nzRotate]="config.icon.rotate"
+      [ngClass]="config.icon.class"
+    >
+    </i>
+  </nz-form-control>
+</nz-form-item>

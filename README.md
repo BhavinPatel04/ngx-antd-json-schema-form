@@ -66,29 +66,87 @@ Typescript:
 ```typescript
 schema: [
   {
-    key: "sae",
-    label: "sae",
-    type: "string",
-    required: true,
-    value: "bhavinpatel"
-  },
-  {
-    key: "sla",
-    label: "sla",
-    type: "string",
+    key: "input",
+    label: "input",
+    type: "input",
     required: true,
     value: ""
   },
   {
-    key: "isPartitioned",
-    label: "isPartitioned",
-    type: "bool",
+    key: "input-hidden",
+    label: "input-hidden",
+    type: "input",
+    required: true,
+    hidden: true,
+    value: "blah-blah"
+  },
+  {
+    key: "checkbox",
+    label: "checkbox",
+    type: "checkbox",
     required: true,
     value: true
   },
   {
-    key: "columns",
-    label: "columns",
+    key: "radio",
+    label: "radio",
+    type: "radio",
+    required: true,
+    value: "yes",
+    options: [
+      {
+        label: "Yes",
+        value: "yes"
+      },
+      {
+        label: "No",
+        value: "No"
+      }
+    ] as FormOption[]
+  },
+  {
+    key: "radio-button",
+    label: "radio-button",
+    type: "radio-button",
+    required: false,
+    value: false,
+    options: [
+      {
+        label: "Yes",
+        value: true
+      },
+      {
+        label: "No",
+        value: false
+      }
+    ] as FormOption[]
+  },
+  {
+    key: "select",
+    label: "select",
+    type: "select",
+    options: [
+      {
+        label: "Option 1",
+        value: "1"
+      },
+      {
+        label: "Option 2",
+        value: "2"
+      }
+    ] as FormOption[],
+    value: "1"
+  },
+  {
+    key: "textarea",
+    label: "textarea",
+    type: "textarea",
+    required: true,
+    value: ""
+  },
+  {
+    key: "prism",
+    label: "prism",
     type: "prism",
     language: "typescript",
     required: true,
@@ -98,12 +156,19 @@ schema: [
     fieldClass: "prism-class"
   },
   {
-    key: "submit",
-    label: "Submit",
-    type: "button",
-    class: "submit-button-container"
+    key: "icon",
+    label: "icon",
+    type: "icon",
+    required: false,
+    value: "any value, does not matter",
+    disabled: false,
+    icon: {
+      type: "check-circle",
+      theme: "fill",
+      class: "form-icon-class"
+    } as FormIcon
   }
-];
+] as FormItem[];
 settings: FormSettings = {
   fieldClass: "field-class"
 };

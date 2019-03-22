@@ -16,7 +16,8 @@ import { FormSelectComponent } from "./components/form-select/form-select.compon
 import { FormCheckboxComponent } from "./components/form-checkbox/form-checkbox.component";
 import { FormRadioComponent } from "./components/form-radio/form-radio.component";
 import { FormTextareaComponent } from "./components/form-textarea/form-textarea.component";
-import { PrismComponent } from "./components/form-prism/form-prism.component";
+import { FormPrismComponent } from "./components/form-prism/form-prism.component";
+import { FormIconComponent } from "./components/form-icon/form-icon.component";
 
 const childComponents = [
   FormButtonComponent,
@@ -25,7 +26,8 @@ const childComponents = [
   FormCheckboxComponent,
   FormRadioComponent,
   FormTextareaComponent,
-  PrismComponent
+  FormPrismComponent,
+  FormIconComponent
 ];
 
 @NgModule({

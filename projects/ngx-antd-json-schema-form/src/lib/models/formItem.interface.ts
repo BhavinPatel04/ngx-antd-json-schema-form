@@ -1,5 +1,6 @@
 import { FormOption } from "./formOption.interface";
 import { FormCommonSettings } from "./settings.interface";
+import { FormIcon } from "./formIcon.interface";
 
 export interface FormItem extends FormCommonSettings {
   key: string;
@@ -13,6 +14,7 @@ export interface FormItem extends FormCommonSettings {
   value?: any;
   required?: boolean;
   language?: string;
+  icon?: FormIcon;
 }
 
 export interface FormSubmitButton extends FormCommonSettings {

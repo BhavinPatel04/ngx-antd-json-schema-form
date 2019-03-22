@@ -111,8 +111,7 @@ export class NgxAntdJsonSchemaFormComponent implements OnChanges {
       {
         key: "submit",
         type: "button",
-        ...this.formSettings.submitButton,
-        fieldClass: "submit-button-class"
+        ...this.formSettings.submitButton
       } as FormItem,
       newConfig
     );

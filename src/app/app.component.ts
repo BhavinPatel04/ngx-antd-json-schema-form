@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { AppConfig } from "./app.config";
 import { APP_CONSTANTS } from "./app.constants";
@@ -9,7 +9,8 @@ import { FormGroup } from "@angular/forms";
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
-  providers: [Title]
+  providers: [Title],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   title = "ngx-braebone-app";

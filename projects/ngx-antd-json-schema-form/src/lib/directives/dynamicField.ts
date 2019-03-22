@@ -16,8 +16,9 @@ import { FormInputComponent } from "../components/form-input/form-input.componen
 import { FormCheckboxComponent } from "../components/form-checkbox/form-checkbox.component";
 import { FormSelectComponent } from "../components/form-select/form-select.component";
 import { FormTextareaComponent } from "../components/form-textarea/form-textarea.component";
-import { PrismComponent } from "../components/form-prism/form-prism.component";
+import { FormPrismComponent } from "../components/form-prism/form-prism.component";
 import { FormRadioComponent } from "../components/form-radio/form-radio.component";
+import { FormIconComponent } from "../components/form-icon/form-icon.component";
 
 const components: { [type: string]: Type<Field> } = {
   button: FormButtonComponent,
@@ -27,7 +28,8 @@ const components: { [type: string]: Type<Field> } = {
   radio: FormRadioComponent,
   "radio-button": FormRadioComponent,
   textarea: FormTextareaComponent,
-  prism: PrismComponent
+  prism: FormPrismComponent,
+  icon: FormIconComponent
 };
 
 @Directive({

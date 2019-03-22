@@ -1,4 +1,4 @@
-import { FormItem, FormOption } from "../../projects/ngx-antd-json-schema-form/src/lib/models";
+import { FormItem, FormOption, FormIcon } from "../../projects/ngx-antd-json-schema-form/src/lib/models";
 
 export const APP_CONSTANTS = {
   SAMPLE_SCHEMA: [
@@ -91,6 +91,19 @@ export const APP_CONSTANTS = {
         "[\n  {\n  \"name\": \"user_id\",\n  \"isPii\": false,\n  },\n  {\n  \"name\": \"user_name\",\n  \"isPii\": true,\n }\n]",
       disabled: true,
       fieldClass: "prism-class"
+    },
+    {
+      key: "icon",
+      label: "icon",
+      type: "icon",
+      required: false,
+      value: "any value, does not matter",
+      disabled: false,
+      icon: {
+        type: "check-circle",
+        theme: "fill",
+        class: "form-icon-class"
+      } as FormIcon
     }
   ] as FormItem[]
 };

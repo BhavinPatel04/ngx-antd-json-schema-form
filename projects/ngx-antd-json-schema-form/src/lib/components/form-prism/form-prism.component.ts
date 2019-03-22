@@ -11,11 +11,11 @@ import { FormItem, FormSettings } from "../../models";
 declare var Prism: any;
 
 @Component({
-  selector: "form-prism",
+  selector: "json-schema-form-prism",
   templateUrl: "./form-prism.component.html",
   styleUrls: ["./form-prism.component.scss"]
 })
-export class PrismComponent implements AfterViewInit, AfterContentInit, OnChanges, OnDestroy {
+export class FormPrismComponent implements AfterViewInit, AfterContentInit, OnChanges, OnDestroy {
   private observer: MutationObserver | null;
 
   group: FormGroup;
