@@ -97,7 +97,7 @@
     "lint-staged": "^8.1.0",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
-    "ng-packagr": "^4.7.0",
+    "ng-packagr": "^10.1.1",
     "ng-zorro-antd": "^7.0.0-rc.3",
     "ngx-restangular": "^4.0.1",
     "nyc": "^13.2.0",
